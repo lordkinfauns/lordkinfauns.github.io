@@ -1,0 +1,89 @@
+/* ============================================================
+   Lord Kinfauns — motion + rendering only.
+   The original look/feel is preserved: NO colour, font, nav,
+   or layout changes. This adds load/scroll animations, a
+   smoother read-more, image fade-in, focus a11y, and a
+   reduced-motion opt-out.
+   ============================================================ */
+
+:root{ --ease:cubic-bezier(.22,.61,.36,1); --ease-soft:cubic-bezier(.16,1,.3,1); }
+
+/* The page scrolls past the viewport-height <body>; a trailing child margin can
+   escape a wrapper and let the fixed hero background show through as a strip
+   above the footer. Contain it with a hair of bottom padding — NOT an <html>
+   background, which would break the z-index:-1 hero backgrounds. */
+#wrapper,#secondary-wrapper{padding-bottom:1px}
+
+/* ---- Image fade-in on load (gated on .img-fade, which the script
+        adds only once it's running — a script failure can't hide imgs) ---- */
+.img-fade article img{opacity:0;transition:opacity .85s var(--ease-soft)}
+.img-fade article img.img-loaded{opacity:1}
+
+/* ---- Loading entrance (final state identical to original) ---- */
+@keyframes lk-rise{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:none}}
+@keyframes lk-crest{from{opacity:0;transform:translate3d(0,-6px,0) scale(.94)}to{opacity:1;transform:none}}
+@keyframes lk-fade{from{opacity:0}to{opacity:1}}
+
+/* Promote ONLY the normal-flow entrance elements. Never put will-change or
+   transform on the fixed, z-index:-1 background layers — it gives them their
+   own compositing/stacking context, which drops them behind the page and
+   renders the hero black. */
+.js .intro-content .brand img,
+.js .secondary-intro-content .brand img,
+.js .intro-content h1.title,
+.js .intro-content h2.title,
+.js #nav{will-change:opacity,transform}
+
+/* Hero background layers simply fade in on a timer (no load-gating, so they
+   appear as soon as they paint), staggered gently back-to-front. */
+/* Staged hero reveal: the background settles in first, then the figures layered
+   on top, back-to-front — gently paced so it builds rather than snapping in. */
+.js #collector-earl .layer{animation:lk-fade 1.3s var(--ease-soft) both}
+.js #collector-earl .layer-bg{animation-delay:.1s}
+.js #collector-earl .layer-1{animation-delay:.5s}
+.js #collector-earl .layer-2{animation-delay:.9s}
+
+/* Hero layers served as WebP (~0.5MB total vs ~9MB of PNG) so first-time
+   visitors get the staged reveal fast, not a slow chunky load. */
+#collector-earl .layer-bg{background-image:url(/images/background01.webp)}
+#collector-earl .layer-1{background-image:url(/images/background02.webp)}
+#collector-earl .layer-2{background-image:url(/images/background03.webp)}
+
+/* Brand lockup in the hero: the generic link rule puts a stray 1px underline
+   under "Lord Kinfauns (timeline)" and the wrapped lines are cramped. Drop the
+   underline and let the two lines breathe. */
+header #nav .brand a{border-bottom:none;line-height:1.18}
+.js #nav{animation:lk-fade 1.1s var(--ease-soft) .1s both}
+.js .secondary-intro-content .brand img{animation:lk-crest 1.1s var(--ease-soft) .22s both}
+
+/* Homepage hero: the background scene builds first (the staged layers above),
+   THEN the text settles in on top of it, last — nav, then brand, then title. */
+.js .intro-content #nav{animation:lk-fade 1s var(--ease-soft) 1.7s both}
+.js .intro-content .brand img{animation:lk-crest 1s var(--ease-soft) 1.85s both}
+.js .intro-content h1.title{animation:lk-rise 1.1s var(--ease-soft) 2.05s both}
+.js .intro-content h2.title{animation:lk-rise 1.1s var(--ease-soft) 2.3s both}
+
+/* ---- Scroll reveal for timeline entries + prose articles ---- */
+.js .reveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity .9s var(--ease-soft),transform .9s var(--ease-soft);will-change:opacity,transform}
+.js .reveal.is-visible{opacity:1;transform:none}
+
+/* ---- Read-more: animate the expand (was an instant snap) ---- */
+.fulltext{overflow:hidden;max-height:6000px;opacity:1;transition:max-height .55s var(--ease),opacity .4s ease}
+.fulltext.collapsed{max-height:0;opacity:0}
+
+/* ---- Focus visibility (a11y) — uses the site's existing blue ---- */
+a:focus-visible,button:focus-visible,.toggle-content:focus-visible,.hamburger:focus-visible{
+  outline:2px solid #6bb1ff;outline-offset:3px}
+
+/* ---- Respect reduced motion ---- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important}
+  .img-fade article img,.js .reveal,
+  .js .intro-content h1.title,.js .intro-content h2.title,
+  .js .intro-content .brand img,.js .secondary-intro-content .brand img{opacity:1!important;transform:none!important}
+  [data-type='parallax']{transform:none!important}
+}
+
+/* ---- Restore italics: the CSS reset neutralises <em>/<i> via font:inherit ---- */
+em,i{font-style:italic}
