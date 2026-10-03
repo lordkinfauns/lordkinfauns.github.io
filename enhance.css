@@ -163,3 +163,6 @@ article .kf-figure img{display:block;width:100%;max-width:760px;height:auto;marg
 /* Inner-page hero photographs served as WebP (same pictures, about a third of the bytes) */
 #arundel-castle{background-image:url(/images/abbey.webp)}
 
+/* The shield links to the homepage. display:contents keeps the link from
+   making a box of its own, so the shield sits exactly where it did. */
+a.kf-home{display:contents!important}
