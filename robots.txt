@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /parts/
+
+Sitemap: https://www.lordkinfauns.com/sitemap.xml
