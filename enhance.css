@@ -152,3 +152,7 @@ ul#inv-menu{top:30px}
 .kf-figure a{display:block;border:0}
 article .kf-figure img{display:block;width:100%;max-width:760px;height:auto;margin:0;padding:0}
 
+/* Inner-page hero photographs served as WebP (same pictures, about a third of the bytes) */
+#arundel-castle{background-image:url(/images/abbey.webp)}
+#killone{background-image:url(/images/killoneabbeylake.webp)}
+
