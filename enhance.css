@@ -53,9 +53,9 @@
 
 /* Hero layers served as WebP (~0.5MB total vs ~9MB of PNG) so first-time
    visitors get the staged reveal fast, not a slow chunky load. */
-#collector-earl .layer-bg{background-image:url(/images/hero-bg-2026.webp)}
-#collector-earl .layer-1{background-image:url(/images/hero-lord-2026.webp)}
-#collector-earl .layer-2{background-image:url(/images/hero-lady-2026.webp)}
+#collector-earl .layer-bg{background-image:url(/images/hero-bg-v3.webp)}
+#collector-earl .layer-1{background-image:url(/images/hero-lady-v3.webp)}
+#collector-earl .layer-2{background-image:url(/images/hero-lord-v3.webp)}
 
 /* Brand lockup in the hero: the generic link rule puts a stray 1px underline
    under "Lord Kinfauns (timeline)" and the wrapped lines are cramped. Drop the
