@@ -171,11 +171,9 @@ article .kf-figure img{display:block;width:100%;max-width:760px;height:auto;marg
    making a box of its own, so the shield sits exactly where it did. */
 a.kf-home{display:contents!important}
 
-/* Timeline: the title shows first and large, the name smaller beneath it. The source still reads "Name, Nth Lord Kinfauns" for search. Any other title sits on its own line, outside the heading. */
-.timeline h2.kf-h{display:flex;flex-direction:column-reverse}
-.timeline h2.kf-h .kf-ln{display:block;font-size:.9em;line-height:1.15}
-.timeline h2.kf-h .name{font-size:1.95rem;line-height:1.2;margin-top:.15rem}
-.timeline h2.kf-h .kf-c{display:none}
+/* Timeline: the name first with its comma, the title large beneath it. Any other title sits on its own line, outside the heading. */
+.timeline h2.kf-h .name{display:block;font-size:1.95rem;line-height:1.2}
+.timeline h2.kf-h .kf-ln{display:block;font-size:.9em;line-height:1.15;margin-top:.08rem}
 .kf-peer{font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.2;color:#bdbdbd;margin:.1rem 0 .7rem}
 @media (max-width:960px){.timeline h2.kf-h .name{font-size:1.6rem}
 .kf-peer{font-size:1.28rem}}
