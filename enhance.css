@@ -191,7 +191,11 @@ a.kf-home{display:contents!important}
 /* Phones: MENU stays on screen over the timeline, so it needs a darker box, and
    the open menu needs a solid background or its links sit on the page text. */
 #inv-nav-main-btn,#inv-nav-main-btn.is-active{background-color:rgba(0,0,0,.7)}
-@media (max-width:959px){ul#inv-menu{background:#181818}}
+@media (max-width:959px){
+  ul#inv-menu{background:#181818}
+  /* The theme's margin left a see-through strip above the first link. */
+  .nav-wrapper #nav .navbar ul#inv-menu{margin-top:0;padding-top:28px}
+}
 
 /* Desktop: once the timeline starts, the arms and the two links stay on screen in
    the empty margins, with no background. 1100px is the narrowest width measured
