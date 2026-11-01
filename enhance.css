@@ -169,3 +169,11 @@ article .kf-figure img{display:block;width:100%;max-width:760px;height:auto;marg
 /* The shield links to the homepage. display:contents keeps the link from
    making a box of its own, so the shield sits exactly where it did. */
 a.kf-home{display:contents!important}
+
+/* Timeline: heading = "Name, Nth Lord Kinfauns"; any other title on a line of its own, outside the heading. */
+.timeline h2 .kf-ln{display:block;font-size:1.95rem;line-height:1.2;margin-top:.15rem}
+.kf-peer{font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.2;color:#bdbdbd;margin:.1rem 0 .7rem}
+@media (max-width:960px){.timeline h2 .kf-ln{font-size:1.6rem}
+.kf-peer{font-size:1.28rem}}
+@media (max-width:450px){.timeline h2 .kf-ln{font-size:1.35rem}
+.kf-peer{font-size:1.16rem;text-align:center}}
