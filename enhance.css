@@ -159,8 +159,9 @@ ul#inv-menu{top:30px}
 @media print{.kf-bar{position:static}}
 
 /* A wide picture inside a timeline entry, below the text (the memorial in the 18th entry) */
-.kf-figure{clear:both;margin:16px 0 6px}
-.kf-figure a{display:block;border:0}
+.kf-figure{clear:both;margin:22px auto 10px;max-width:640px}
+.kf-figure a{display:block;padding:9px;border:1px solid rgba(255,255,255,.28)}
+@media (max-width:450px){.kf-figure a{padding:6px}}
 article .kf-figure img{display:block;width:100%;max-width:760px;height:auto;margin:0;padding:0}
 
 /* Inner-page hero photographs served as WebP (same pictures, about a third of the bytes) */
