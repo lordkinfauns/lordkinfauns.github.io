@@ -36,6 +36,34 @@
     });
   }
 
+  /* ---- Desktop nav: shows once the timeline starts ---- */
+  var stick = doc.querySelector('.kf-stick');
+  var firstEntry = doc.querySelector('.timeline');
+  if (stick && firstEntry) {
+    var stickOn = false;
+    var stickTick = false;
+    var checkStick = function () {
+      stickTick = false;
+      var past = firstEntry.getBoundingClientRect().top < 140;
+      if (past !== stickOn) {
+        stickOn = past;
+        stick.classList.toggle('is-on', past);
+      }
+    };
+    window.addEventListener('scroll', function () {
+      if (stickTick) return;
+      stickTick = true;
+      requestAnimationFrame(checkStick);
+    }, { passive: true });
+    checkStick();
+    each(stick.querySelectorAll('a[href="/"]'), function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+  }
+
   /* ---- Image fade-in on load (opt in only now that JS is running) ---- */
   doc.documentElement.classList.add('img-fade');
   each(doc.querySelectorAll('article img'), function (img) {

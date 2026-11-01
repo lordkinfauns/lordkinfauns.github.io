@@ -39,8 +39,10 @@
 .js .intro-content .brand img,
 .js .secondary-intro-content .brand img,
 .js .intro-content h1.title,
-.js .intro-content h2.title,
-.js #nav{will-change:opacity,transform}
+.js .intro-content h2.title{will-change:opacity,transform}
+/* #nav only fades. will-change:transform here would make it the containing
+   block for the fixed MENU button and menu, so they would scroll off with the page. */
+.js #nav{will-change:opacity}
 
 /* Hero background layers simply fade in on a timer (no load-gating, so they
    appear as soon as they paint), staggered gently back-to-front. */
@@ -185,3 +187,23 @@ a.kf-home{display:contents!important}
 .timeline h2.kf-e .kf-s{display:block;font-size:1.95rem;line-height:1.2;margin-top:.1rem}
 @media (max-width:960px){.timeline h2.kf-e .kf-s{font-size:1.6rem}}
 @media (max-width:450px){.timeline h2.kf-e .kf-s{font-size:1.35rem}}
+
+/* Phones: MENU stays on screen over the timeline, so it needs a darker box, and
+   the open menu needs a solid background or its links sit on the page text. */
+#inv-nav-main-btn,#inv-nav-main-btn.is-active{background-color:rgba(0,0,0,.7)}
+@media (max-width:959px){ul#inv-menu{background:#181818}}
+
+/* Desktop: once the timeline starts, the arms and the two links stay on screen in
+   the empty margins, with no background. 1100px is the narrowest width measured
+   where the margins are clear of the dates and the text. */
+.kf-stick{display:none}
+@media (min-width:1100px){
+  .kf-stick{display:block;position:fixed;top:0;left:0;right:0;height:0;z-index:2147483646;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  .kf-stick.is-on{opacity:1;visibility:visible}
+  .kf-stick__arms{position:absolute;left:12px;top:42px;border:0}
+  .kf-stick__arms img{display:block;width:81px;height:93px}
+  .kf-stick ul{position:absolute;right:30px;top:52px;margin:0;padding:0;list-style:none;text-align:right}
+  .kf-stick li{display:block;margin:0;padding:0}
+  .kf-stick li a{border:0;color:#fff;font-family:Julius Sans One,sans-serif;font-size:14px;line-height:2;text-transform:uppercase}
+}
+@media print{.kf-stick{display:none}}
