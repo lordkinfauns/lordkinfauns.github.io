@@ -179,3 +179,9 @@ a.kf-home{display:contents!important}
 .kf-peer{font-size:1.28rem}}
 @media (max-width:450px){.timeline h2.kf-h .name{font-size:1.35rem}
 .kf-peer{font-size:1.16rem;text-align:center}}
+
+/* Before the numbered lords: the name stays large, "Lord of Kinfauns" small beneath it. */
+.timeline h2.kf-e .name{display:block}
+.timeline h2.kf-e .kf-s{display:block;font-size:1.95rem;line-height:1.2;margin-top:.1rem}
+@media (max-width:960px){.timeline h2.kf-e .kf-s{font-size:1.6rem}}
+@media (max-width:450px){.timeline h2.kf-e .kf-s{font-size:1.35rem}}
