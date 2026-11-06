@@ -1,0 +1,44 @@
+/* The comic pages (/comic/): a compact dark header instead of the photo hero,
+   then panels with caption boxes. Captions are real text, never in the images. */
+.kf-comic .secondary-intro-content{height:auto;padding-bottom:6px}
+.kf-comic #secondary-wrapper{padding-top:14px}
+.kf-comic #main-content{max-width:100%}
+.kfc{max-width:860px;margin:0 auto;padding:0 16px 40px;box-sizing:border-box;color:#fff}
+.kfc-kicker{margin:0;text-align:center;font:400 13px/1.4 'Julius Sans One',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#bdb7ab}
+.kfc h1{font:400 3rem/1.08 'Cormorant Garamond',serif;text-align:center;margin:.35rem auto .6rem;width:auto;border:0;padding:0;color:#fff}
+.kfc-sub{text-align:center;font:italic 400 1.3rem/1.45 'Cormorant Garamond',serif;color:#cfc8ba;margin:0 auto 2.2rem;max-width:34em;background:none;padding:0}
+/* The theme gives every article img a margin, and padding on phones; the comic lines its pictures up with the text. */
+.kfc img{margin:0;padding:0}
+.kfc-panel{margin:0 0 34px;padding:0}
+.kfc-panel img{display:block;width:100%;height:auto;border:3px solid #0d0d0d;outline:1px solid #6d665b;box-sizing:border-box;background:#222}
+.kfc-cap{position:relative;z-index:1;display:block;width:fit-content;max-width:80%;margin:0 0 -16px 12px;padding:10px 14px;background:#efe4c6;color:#1b1712;border:2px solid #0d0d0d;box-shadow:3px 3px 0 #0d0d0d;font:500 1.2rem/1.4 'Cormorant Garamond',serif}
+.kfc-panel.r .kfc-cap{margin-left:auto;margin-right:12px}
+.kfc-start{text-align:center;margin:-10px 0 34px;background:none;padding:0}
+.kfc-start a,.kfc-nav a{color:#fff;border:0;text-decoration:none;font:400 14px/1.6 'Julius Sans One',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.kfc-start a{border-bottom:1px solid #9c9c9c}
+.kfc-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 20px;border-top:1px solid #3a3a3a;padding-top:18px;margin-top:10px}
+.kfc-end{text-align:center;font:italic 400 1.4rem 'Cormorant Garamond',serif;color:#cfc8ba;margin:6px 0 28px;background:none;padding:0}
+.kfc-chapters{list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px 22px}
+.kfc-chapters li{list-style:none;margin:0;padding:0}
+.kfc-chapters a{display:block;color:#fff;border:0;text-decoration:none}
+.kfc-chapters img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:3px solid #0d0d0d;outline:1px solid #6d665b;box-sizing:border-box}
+.kfc-chapters .n{display:block;margin-top:12px;font:400 12px 'Julius Sans One',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#bdb7ab}
+.kfc-chapters .t{display:block;font:400 1.65rem/1.15 'Cormorant Garamond',serif;margin-top:2px}
+.kfc-chapters .y{display:block;font:400 1.05rem 'Cormorant Garamond',serif;color:#bdb7ab}
+@media (max-width:450px){.kfc h1{font-size:2.4rem}.kfc-sub{font-size:1.15rem}.kfc-cap{font-size:1.05rem;max-width:90%;padding:8px 11px}.kfc-panel.r .kfc-cap{max-width:90%}}
+.kfc-tl{text-align:center;font:400 1.15rem/1.8 'Cormorant Garamond',serif;color:#cfc8ba;margin:-4px 0 26px;background:none;padding:0}
+.kfc-tl a{color:#fff;border:0;border-bottom:1px solid #6d665b;text-decoration:none;white-space:nowrap}
+.kfc-kicker a{color:#fff;border:0;border-bottom:1px solid #6d665b;text-decoration:none}
+.kfc-cover a{display:block;border:0;overflow:hidden}
+.kfc-cover img{transition:transform .6s ease}
+.kfc-cover a:hover img{transform:scale(1.02)}
+/* Chapter buttons: a big next button, then smaller previous and contents buttons. */
+.kfc-nav{display:block;border-top:0;padding-top:6px}
+.kfc-btn--next{display:block;margin:0 0 14px;padding:18px 22px;background:#efe4c6;color:#1b1712!important;border:2px solid #0d0d0d!important;box-shadow:4px 4px 0 #0d0d0d;text-decoration:none;text-align:center;transition:transform .15s,box-shadow .15s}
+.kfc-btn--next:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #0d0d0d}
+.kfc-btn__k{display:block;font:400 13px/1.3 'Julius Sans One',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#5a5144}
+.kfc-btn__t{display:block;margin-top:4px;font:400 1.9rem/1.15 'Cormorant Garamond',serif;letter-spacing:0;text-transform:none;color:#1b1712}
+.kfc-nav__row{display:flex;gap:12px}
+.kfc-nav__row .kfc-btn{flex:1;display:block;padding:14px 12px;text-align:center;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font:400 14px/1.2 'Julius Sans One',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.kfc-nav__row .kfc-btn:hover{background:rgba(0,0,0,.85)}
+@media (max-width:450px){.kfc-btn__t{font-size:1.55rem}.kfc-btn--next{padding:15px 16px}}
