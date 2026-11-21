@@ -42,3 +42,8 @@
 .kfc-nav__row .kfc-btn{flex:1;display:block;padding:14px 12px;text-align:center;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font:400 14px/1.2 'Julius Sans One',sans-serif;letter-spacing:.1em;text-transform:uppercase}
 .kfc-nav__row .kfc-btn:hover{background:rgba(0,0,0,.85)}
 @media (max-width:450px){.kfc-btn__t{font-size:1.55rem}.kfc-btn--next{padding:15px 16px}}
+.kfc-about{max-width:34em;margin:10px auto 30px;padding:0;background:none;color:#cfc8ba;font:400 1.2rem/1.6 'Cormorant Garamond',serif}
+.kfc-about h2{font:400 2rem/1.15 'Cormorant Garamond',serif;color:#fff;text-align:center;margin:0 0 .9rem;width:auto;border:0;padding:0;background:none;text-transform:none;letter-spacing:normal}
+.kfc-about h2 .nw{white-space:nowrap}
+.kfc-about p{margin:0 0 1rem;padding:0;background:none;color:#cfc8ba;font:inherit;text-align:left}
+@media (max-width:450px){.kfc-about{font-size:1.1rem}.kfc-about h2{font-size:1.7rem}}
