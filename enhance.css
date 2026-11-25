@@ -357,3 +357,6 @@ a.kf-home{display:contents!important}
    covered the footer at the bottom of the page and swallowed its links). */
 #collector-earl .layer{pointer-events:none}
 footer{position:relative;z-index:1000000}
+
+article[id]{scroll-margin-top:100px}
+@media (max-width:913px){article[id]{scroll-margin-top:78px}}
