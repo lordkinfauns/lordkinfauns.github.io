@@ -360,3 +360,5 @@ footer{position:relative;z-index:1000000}
 
 article[id]{scroll-margin-top:100px}
 @media (max-width:913px){article[id]{scroll-margin-top:78px}}
+.timeline p a{color:#fff;border-bottom:1px solid #fff}
+.timeline p a:hover,.timeline p a:focus{color:#fff;border-bottom-color:rgba(255,255,255,.45)}
