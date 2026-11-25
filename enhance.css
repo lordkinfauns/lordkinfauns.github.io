@@ -352,3 +352,8 @@ a.kf-home{display:contents!important}
 @media (min-width:914px){.intro-content h1.title{padding-top:458px}}
 /* The header chapeau (replaces Fergus's shield): centred against the site title. */
 .brand img[src*="chapeau"]{align-self:center}
+/* The homepage picture layers are fixed to the screen. They never take taps or
+   clicks, and the footer always sits above them (on phones the layers still
+   covered the footer at the bottom of the page and swallowed its links). */
+#collector-earl .layer{pointer-events:none}
+footer{position:relative;z-index:1000000}
