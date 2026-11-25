@@ -61,7 +61,7 @@
    glides faster). They fade in one after another, wall first. */
 #collector-earl .layer-bg{background-image:url(/images/hero-bg-v8.webp)}
 #collector-earl .layer-1{background-image:url(/images/hero-right-v8.webp)}
-#collector-earl .layer-2{background-image:url(/images/hero-lord-v8.webp)}
+#collector-earl .layer-2{background-image:url(/images/hero-lord-v9.webp)}
 /* All three layers share one anchor point, so they stay registered on screens wider
    than the painting (the theme gave the middle layer a different one). */
 #collector-earl .layer{background-position:center top}
@@ -214,7 +214,7 @@ a.kf-home{display:contents!important}
   .kf-stick{display:block;position:fixed;top:0;left:0;right:0;height:0;z-index:2147483646;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
   .kf-stick.is-on{opacity:1;visibility:visible}
   .kf-stick__arms{position:absolute;left:12px;top:42px;border:0}
-  .kf-stick__arms img{display:block;width:81px;height:93px}
+  .kf-stick__arms img{display:block;width:120px;height:44px}
   .kf-stick ul{position:absolute;right:30px;top:52px;margin:0;padding:0;list-style:none;text-align:right}
   .kf-stick li{display:block;margin:0;padding:0}
   .kf-stick li a{border:0;color:#fff;font-family:Julius Sans One,sans-serif;font-size:14px;line-height:2;text-transform:uppercase}
@@ -241,7 +241,7 @@ a.kf-home{display:contents!important}
   .kf-mlinks a{display:block;padding:11px 12px;background:rgba(0,0,0,.7);color:#fff;border:0;text-decoration:none;font:400 13px/1 'Julius Sans One',sans-serif;letter-spacing:.08em;text-transform:uppercase}
   .kf-marms{display:block;position:fixed;top:38px;left:8px;z-index:2147483646;border:0;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
   .kf-marms.is-on{opacity:1;visibility:visible}
-  .kf-marms img{display:block;width:52px;height:60px;margin:0;padding:0}
+  .kf-marms img{display:block;width:82px;height:30px;margin:0;padding:0}
 }
 @media print{.kf-marms,.kf-mlinks{display:none}}
 
@@ -285,9 +285,9 @@ a.kf-home{display:contents!important}
 @media (min-width:960px){
   .kf-marms{display:block;position:fixed;top:42px;left:12px;border:0;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
   .kf-marms.is-on{opacity:1;visibility:visible}
-  .kf-marms img{display:block;width:52px;height:60px;margin:0;padding:0}
+  .kf-marms img{display:block;width:82px;height:30px;margin:0;padding:0}
 }
-@media (min-width:1100px){.kf-marms img{width:81px;height:93px}}
+@media (min-width:1100px){.kf-marms img{width:120px;height:44px}}
 
 /* Phones, comic pages: no big shield or name in the header (the name ran into the
    heading); the small arms sit at top left instead, from the start. */
@@ -331,7 +331,7 @@ a.kf-home{display:contents!important}
    desktop, not down to his feet. It is shown a little larger (1060px wide) and
    glides less, so the page content covers it just below the hand. */
 @media (max-width:913px){
-  #collector-earl .layer{background-size:1060px auto}
+  #collector-earl .layer{background-size:540px auto}
   #collector-earl .layer-bg{--d:.3}
   #collector-earl .layer-1{--d:.3}
   #collector-earl .layer-2{--d:.45}
@@ -340,4 +340,12 @@ a.kf-home{display:contents!important}
    #wrapper). The theme had 900px of scrolling over the painting, which felt
    long, most of all on phones. The painting still ends just under his hand. */
 #wrapper{margin-top:600px}
-@media (max-width:913px){#wrapper{margin-top:200px}}
+/* Phones: the whole width of the painting shows (red curtain included) and the
+   picture is shorter, ending just under his hand; the title sits a little higher. */
+@media (max-width:913px){
+  #wrapper{margin-top:0}
+  #intro-bg .intro-content{height:520px}
+  .intro-content h1.title{padding-top:200px;font-size:56px}
+}
+/* The header chapeau (replaces Fergus's shield): centred against the site title. */
+.brand img[src*="chapeau"]{align-self:center}
