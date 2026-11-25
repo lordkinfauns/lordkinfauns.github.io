@@ -61,7 +61,7 @@
    glides faster). They fade in one after another, wall first. */
 #collector-earl .layer-bg{background-image:url(/images/hero-bg-v8.webp)}
 #collector-earl .layer-1{background-image:url(/images/hero-right-v8.webp)}
-#collector-earl .layer-2{background-image:url(/images/hero-lord-v10.webp)}
+#collector-earl .layer-2{background-image:url(/images/hero-lord-v11.webp)}
 /* All three layers share one anchor point, so they stay registered on screens wider
    than the painting (the theme gave the middle layer a different one). */
 #collector-earl .layer{background-position:center top}
