@@ -119,8 +119,14 @@
     each(revealEls, function (el) { io.observe(el); });
   }
 
-  /* ---- Parallax (rAF-throttled, passive, skipped under reduced-motion) ---- */
-  if (!reduce) {
+  /* ---- Parallax (rAF-throttled, passive, skipped under reduced-motion) ----
+     Where the browser has scroll-driven CSS animations (enhance.css), the
+     parallax runs there instead, off the main thread, so it stays smooth on
+     phones. Phones without them keep the painting still: scripted parallax
+     judders during touch scrolling. */
+  var cssParallax = window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()');
+  var touch = window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  if (!reduce && !cssParallax && !touch) {
     var layers = doc.querySelectorAll("[data-type='parallax']");
     if (layers.length) {
       var tick = false;

@@ -304,3 +304,32 @@ a.kf-home{display:contents!important}
 .js .timeline.reveal{opacity:1;transform:none;will-change:auto}
 .js .timeline.reveal>*,.js .timeline.reveal:before{opacity:0;transform:translate3d(0,22px,0);transition:opacity .9s var(--ease-soft),transform .9s var(--ease-soft)}
 .js .timeline.reveal.is-visible>*,.js .timeline.reveal.is-visible:before{opacity:1;transform:none}
+
+/* Homepage picture, bottom edge and smooth scrolling.
+   1. The layers are 1800px tall and the painting fills their width (never less
+      than 914px, so phones keep the same framing). At 1500px the Earl's layer
+      ran out before the page content reached it on screens taller than about
+      1000px, showing a black band.
+   2. The parallax is a scroll-driven animation where supported (Chrome, Edge,
+      Safari 26+): it runs off the main thread, so it is smooth on phones. Each
+      layer moves up by its data-depth times the scroll, as the script did.
+      Elsewhere the script in js/script.js does it on desktops only. */
+#collector-earl .layer{height:1800px;background-size:max(100%,914px) auto}
+@supports (animation-timeline: scroll()){
+  @keyframes lk-par{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,calc(-2400px * var(--d)),0)}}
+  #collector-earl .layer-bg{--d:.55}
+  #collector-earl .layer-1,#collector-earl .layer-2{--d:.75}
+  #collector-earl .layer{animation:lk-par linear both;animation-timeline:scroll(root);animation-range:0px 2400px}
+  .js #collector-earl .layer{animation:lk-fade 1.3s var(--ease-soft) both,lk-par linear both;animation-timeline:auto,scroll(root);animation-range:normal,0px 2400px}
+  .js #collector-earl .layer-bg{animation-delay:.1s,0s}
+  .js #collector-earl .layer-1{animation-delay:.5s,0s}
+  .js #collector-earl .layer-2{animation-delay:.9s,0s}
+}
+/* Phones: the painting runs from his head to just under his hand, as on a
+   desktop, not down to his feet. It is shown a little larger (1060px wide) and
+   glides less, so the page content covers it just below the hand. */
+@media (max-width:913px){
+  #collector-earl .layer{background-size:1060px auto}
+  #collector-earl .layer-bg{--d:.22}
+  #collector-earl .layer-1,#collector-earl .layer-2{--d:.3}
+}
