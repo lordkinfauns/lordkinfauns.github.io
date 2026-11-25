@@ -292,3 +292,12 @@ a.kf-home{display:contents!important}
   body.kf-comic .kf-marms{opacity:1;visibility:visible}
   body.kf-comic .nav-wrapper{height:84px}
 }
+
+/* Timeline rule: one unbroken line from the first lord to the last. Each entry
+   now holds its floated portrait (so the line runs down past it), and the
+   scroll reveal fades the entry's contents, not the entry, so the line itself
+   never fades out or slides. */
+.timeline{display:flow-root}
+.js .timeline.reveal{opacity:1;transform:none;will-change:auto}
+.js .timeline.reveal>*,.js .timeline.reveal:before{opacity:0;transform:translate3d(0,22px,0);transition:opacity .9s var(--ease-soft),transform .9s var(--ease-soft)}
+.js .timeline.reveal.is-visible>*,.js .timeline.reveal.is-visible:before{opacity:1;transform:none}
