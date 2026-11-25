@@ -330,6 +330,11 @@ a.kf-home{display:contents!important}
    glides less, so the page content covers it just below the hand. */
 @media (max-width:913px){
   #collector-earl .layer{background-size:1060px auto}
-  #collector-earl .layer-bg{--d:.22}
-  #collector-earl .layer-1,#collector-earl .layer-2{--d:.3}
+  #collector-earl .layer-bg{--d:.3}
+  #collector-earl .layer-1,#collector-earl .layer-2{--d:.45}
 }
+/* The gap between the homepage title and the timeline (only the homepage has
+   #wrapper). The theme had 900px of scrolling over the painting, which felt
+   long, most of all on phones. The painting still ends just under his hand. */
+#wrapper{margin-top:600px}
+@media (max-width:913px){#wrapper{margin-top:200px}}
