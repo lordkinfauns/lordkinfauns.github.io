@@ -55,9 +55,12 @@
 
 /* Hero layers served as WebP (~0.5MB total vs ~9MB of PNG) so first-time
    visitors get the staged reveal fast, not a slow chunky load. */
-#collector-earl .layer-bg{background-image:url(/images/hero-bg-v5.webp)}
-#collector-earl .layer-1{background-image:url(/images/hero-lady-v5.webp)}
-#collector-earl .layer-2{background-image:url(/images/hero-lord-v5.webp)}
+/* The homepage picture is the genuine Van Dyck and Studio portrait of George Hay,
+   2nd Earl of Kinnoull, 7th Lord Kinfauns: the wall behind (bg), and the Earl with
+   the curtain, table and helmet in front (layer-2). layer-1 is not used. */
+#collector-earl .layer-bg{background-image:url(/images/hero-bg-v6.webp)}
+#collector-earl .layer-1{background-image:none}
+#collector-earl .layer-2{background-image:url(/images/hero-lord-v6.webp)}
 /* All three layers share one anchor point, so they stay registered on screens wider
    than the painting (the theme gave the middle layer a different one). */
 #collector-earl .layer{background-position:center top}
