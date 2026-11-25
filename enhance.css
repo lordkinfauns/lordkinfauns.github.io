@@ -56,11 +56,12 @@
 /* Hero layers served as WebP (~0.5MB total vs ~9MB of PNG) so first-time
    visitors get the staged reveal fast, not a slow chunky load. */
 /* The homepage picture is the genuine Van Dyck and Studio portrait of George Hay,
-   2nd Earl of Kinnoull, 7th Lord Kinfauns: the wall behind (bg), and the Earl with
-   the curtain, table and helmet in front (layer-2). layer-1 is not used. */
-#collector-earl .layer-bg{background-image:url(/images/hero-bg-v7.webp)}
-#collector-earl .layer-1{background-image:none}
-#collector-earl .layer-2{background-image:url(/images/hero-lord-v7.webp)}
+   2nd Earl of Kinnoull, 7th Lord Kinfauns: the wall behind (bg), and the red curtain,
+   table and helmet (layer-1, moves with the wall) and the Earl alone (layer-2,
+   glides faster). They fade in one after another, wall first. */
+#collector-earl .layer-bg{background-image:url(/images/hero-bg-v8.webp)}
+#collector-earl .layer-1{background-image:url(/images/hero-right-v8.webp)}
+#collector-earl .layer-2{background-image:url(/images/hero-lord-v8.webp)}
 /* All three layers share one anchor point, so they stay registered on screens wider
    than the painting (the theme gave the middle layer a different one). */
 #collector-earl .layer{background-position:center top}
@@ -318,7 +319,8 @@ a.kf-home{display:contents!important}
 @supports (animation-timeline: scroll()){
   @keyframes lk-par{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,calc(-2400px * var(--d)),0)}}
   #collector-earl .layer-bg{--d:.55}
-  #collector-earl .layer-1,#collector-earl .layer-2{--d:.75}
+  #collector-earl .layer-1{--d:.55}
+  #collector-earl .layer-2{--d:.75}
   #collector-earl .layer{animation:lk-par linear both;animation-timeline:scroll(root);animation-range:0px 2400px}
   .js #collector-earl .layer{animation:lk-fade 1.3s var(--ease-soft) both,lk-par linear both;animation-timeline:auto,scroll(root);animation-range:normal,0px 2400px}
   .js #collector-earl .layer-bg{animation-delay:.1s,0s}
@@ -331,7 +333,8 @@ a.kf-home{display:contents!important}
 @media (max-width:913px){
   #collector-earl .layer{background-size:1060px auto}
   #collector-earl .layer-bg{--d:.3}
-  #collector-earl .layer-1,#collector-earl .layer-2{--d:.45}
+  #collector-earl .layer-1{--d:.3}
+  #collector-earl .layer-2{--d:.45}
 }
 /* The gap between the homepage title and the timeline (only the homepage has
    #wrapper). The theme had 900px of scrolling over the painting, which felt
