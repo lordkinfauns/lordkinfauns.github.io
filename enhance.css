@@ -61,7 +61,7 @@
    glides faster). They fade in one after another, wall first. */
 #collector-earl .layer-bg{background-image:url(/images/hero-bg-v8.webp)}
 #collector-earl .layer-1{background-image:url(/images/hero-right-v8.webp)}
-#collector-earl .layer-2{background-image:url(/images/hero-lord-v9.webp)}
+#collector-earl .layer-2{background-image:url(/images/hero-lord-v10.webp)}
 /* All three layers share one anchor point, so they stay registered on screens wider
    than the painting (the theme gave the middle layer a different one). */
 #collector-earl .layer{background-position:center top}
@@ -340,12 +340,11 @@ a.kf-home{display:contents!important}
    #wrapper). The theme had 900px of scrolling over the painting, which felt
    long, most of all on phones. The painting still ends just under his hand. */
 #wrapper{margin-top:600px}
-/* Phones: the whole width of the painting shows (red curtain included) and the
-   picture is shorter, ending just under his hand; the title sits a little higher. */
+/* Phones: the whole width of the painting shows (red curtain included) and,
+   now that it is not zoomed in, the full length of the Earl down to his feet;
+   the timeline starts where the painting ends. */
 @media (max-width:913px){
-  #wrapper{margin-top:0}
-  #intro-bg .intro-content{height:520px}
-  .intro-content h1.title{padding-top:200px;font-size:56px}
+  #wrapper{margin-top:75px}
 }
 /* The header chapeau (replaces Fergus's shield): centred against the site title. */
 .brand img[src*="chapeau"]{align-self:center}
