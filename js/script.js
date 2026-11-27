@@ -36,9 +36,10 @@
     });
   }
 
-  /* ---- Desktop nav: shows once the timeline starts ---- */
+  /* ---- Desktop nav: shows once the timeline starts (or, on other pages,
+     the element marked data-kf-stick, e.g. the About text) ---- */
   var stick = doc.querySelector('.kf-stick');
-  var firstEntry = doc.querySelector('.timeline');
+  var firstEntry = doc.querySelector('.timeline') || doc.querySelector('[data-kf-stick]');
   if (stick && firstEntry) {
     var stickOn = false;
     var stickTick = false;
