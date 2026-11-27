@@ -409,3 +409,13 @@ article[id]{scroll-margin-top:100px}
    the text column narrows just enough to stay clear of it. */
 @media (min-width:1100px){article.kf-beside-float{max-width:min(80%,calc(100vw - 2 * (28px + 240px + 28px)))}}
 @media (min-width:1100px) and (max-width:1279px){article.kf-beside-float{max-width:min(80%,calc(100vw - 2 * (28px + 214px + 28px)))}}
+/* About and Allied Houses, phones: the two banners leave the hero and sit just
+   below it, styled like the homepage comic card (caption over the picture). */
+.kf-start-after{display:none}
+@media (max-width:700px){
+  .kf-about-start{display:none}
+  .kf-start-after{display:block}
+  .kf-start-after .kf-comic-card+.kf-comic-card{margin-top:0}
+  .kf-start-after .kf-comic-card:last-child{margin-bottom:34px}
+  .kf-start-after .kf-start-card img{object-position:50% 22%}
+}
